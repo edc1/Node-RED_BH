@@ -2,7 +2,12 @@
     "name": "Node-RED_BH",
     "description": "Node-RED flows for BH",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-eztimer": "1.2.7",
+        "node-red-contrib-home-assistant-websocket": "0.62.3",
+        "node-red-contrib-time-range-switch": "1.2.0",
+        "node-red-node-suncalc": "1.1.0"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",

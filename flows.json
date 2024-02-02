@@ -1,1 +1,1667 @@
-[{"id":"049368fbb51358f1","type":"tab","label":"Lights","disabled":false,"info":"","env":[]},{"id":"6379f67f0d1d27f4","type":"tab","label":"Christmas Lights","disabled":true,"info":"","env":[]},{"id":"36707912aa1f457f","type":"tab","label":"Washing Machine","disabled":false,"info":"","env":[]},{"id":"83b3df7543e2c9f9","type":"tab","label":"Wine Fridge","disabled":false,"info":"","env":[]},{"id":"98c80091b4981659","type":"tab","label":"House Mode","disabled":false,"info":"","env":[]},{"id":"ced01d7c7ed36fed","type":"tab","label":"Run LetsEncrypt","disabled":false,"info":"","env":[]},{"id":"80da3ac02bdf624c","type":"group","z":"049368fbb51358f1","name":"Island Lights Night","style":{"label":true},"nodes":["af1449fc1b71965f","9f98d16deb53b04e","72872da00c41da5d","4701654dd07e30c2","5621d2937720fb15","99e5757e3be2c737"],"x":54,"y":39,"w":732,"h":182},{"id":"7625374620f2e2e0","type":"group","z":"049368fbb51358f1","name":"Living Room Lights Evening","style":{"label":true},"nodes":["2086e63f1dc6cc9b","108cca404ca1a6d0","2ad43f34e3c19b40","f589455b3d550764","bb41070571278ba8","03cb69799aae3a03","9af836940ce14314","726a019eaa32bf3b"],"x":54,"y":279,"w":1052,"h":182},{"id":"f94b8de81daa6fe8","type":"group","z":"36707912aa1f457f","name":"Washing Machine Finished","style":{"label":true},"nodes":["30f69ffe3d2e6dd2","4ed757960569d0b9","4872413ddcac53c6"],"x":54,"y":39,"w":752,"h":82},{"id":"d66c4d71ff4e7f32","type":"group","z":"36707912aa1f457f","name":"Start Washing Machine","style":{"label":true},"nodes":["697303f6b03a2565","824b2639ca586871","e54e4e6f46d18749","3cc9ab2afc21cc6b"],"x":54,"y":159,"w":1092,"h":82},{"id":"3fd332fa992c7852","type":"group","z":"83b3df7543e2c9f9","name":"Monitor Temperature","style":{"label":true},"nodes":["5bb8a35c674fe66c","8fbc8a7c2791b855","b16710c548e4e279","c1353e8c740151a2"],"x":34,"y":39,"w":832,"h":182},{"id":"24deed5cb7258597","type":"group","z":"6379f67f0d1d27f4","name":"Porch Lights","style":{"label":true},"nodes":["59a657d517ebe9e6","2a8a8c420a1b7321","5f7b054b5d90b4f7","1615ccd28d5d6b62"],"x":54,"y":159,"w":552,"h":142},{"id":"314d02d603a84452","type":"group","z":"6379f67f0d1d27f4","name":"Outside Lights","style":{"label":true},"nodes":["245d2f60afee848b","ea2240c4967780f2","584b34e1de6deda0","8faba930c72aab2d"],"x":54,"y":39,"w":1032,"h":82},{"id":"1dd16987.0978c6","type":"server","name":"Home Assistant","addon":true,"rejectUnauthorizedCerts":true,"ha_boolean":"","connectionDelay":false,"cacheJson":false,"heartbeat":false,"heartbeatInterval":"","statusSeparator":"","enableGlobalContextStore":false},{"id":"af1449fc1b71965f","type":"server-state-changed","z":"049368fbb51358f1","g":"80da3ac02bdf624c","name":"Hallway Presence On","server":"1dd16987.0978c6","version":5,"outputs":2,"exposeAsEntityConfig":"","entityId":"binary_sensor.nest_protect_hallway_occupancy","entityIdType":"exact","outputInitially":false,"stateType":"str","ifState":"on","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":true,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":180,"y":80,"wires":[["5621d2937720fb15"],[]]},{"id":"9f98d16deb53b04e","type":"api-call-service","z":"049368fbb51358f1","g":"80da3ac02bdf624c","name":"Island Lights On","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"switch","service":"turn_on","areaId":[],"deviceId":[],"entityId":["switch.island_lights_switch"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":680,"y":80,"wires":[[]]},{"id":"72872da00c41da5d","type":"server-state-changed","z":"049368fbb51358f1","g":"80da3ac02bdf624c","name":"Hallway Presence Off","server":"1dd16987.0978c6","version":5,"outputs":2,"exposeAsEntityConfig":"","entityId":"binary_sensor.nest_protect_hallway_occupancy","entityIdType":"exact","outputInitially":false,"stateType":"str","ifState":"off","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":true,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":180,"y":180,"wires":[["99e5757e3be2c737"],[]]},{"id":"4701654dd07e30c2","type":"api-call-service","z":"049368fbb51358f1","g":"80da3ac02bdf624c","name":"Island Lights Off","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"switch","service":"turn_off","areaId":[],"deviceId":[],"entityId":["switch.island_lights_switch"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":680,"y":180,"wires":[[]]},{"id":"5621d2937720fb15","type":"api-current-state","z":"049368fbb51358f1","g":"80da3ac02bdf624c","name":"House Mode == Night","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"Night","halt_if_type":"str","halt_if_compare":"is","entity_id":"input_select.house_mode","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":440,"y":80,"wires":[["9f98d16deb53b04e"],[]]},{"id":"99e5757e3be2c737","type":"api-current-state","z":"049368fbb51358f1","g":"80da3ac02bdf624c","name":"House Mode == Night","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"Night","halt_if_type":"str","halt_if_compare":"is","entity_id":"input_select.house_mode","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":440,"y":180,"wires":[["4701654dd07e30c2"],[]]},{"id":"2086e63f1dc6cc9b","type":"server-state-changed","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"Living Room Presence On","server":"1dd16987.0978c6","version":5,"outputs":2,"exposeAsEntityConfig":"","entityId":"binary_sensor.living_room_presence_sensor_occupancy","entityIdType":"exact","outputInitially":false,"stateType":"str","ifState":"on","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":true,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":190,"y":320,"wires":[["9af836940ce14314"],[]]},{"id":"108cca404ca1a6d0","type":"api-call-service","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"Living Room Lamps On","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"light","service":"turn_on","areaId":[],"deviceId":["3d1f90039ad28309d8485f91e95fe714","877db69da5a6db3b2009fcdabd338f48"],"entityId":[],"data":"on","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":970,"y":320,"wires":[[]]},{"id":"2ad43f34e3c19b40","type":"time-range-switch","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"Evening","lat":"53.71986","lon":"-2.6411","startTime":"19:30","endTime":"23:55","startOffset":0,"endOffset":0,"x":720,"y":420,"wires":[["bb41070571278ba8"],[]]},{"id":"f589455b3d550764","type":"server-state-changed","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"Living Room Presence Off","server":"1dd16987.0978c6","version":5,"outputs":2,"exposeAsEntityConfig":"","entityId":"binary_sensor.living_room_presence_sensor_occupancy","entityIdType":"exact","outputInitially":false,"stateType":"str","ifState":"off","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":true,"for":"2","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":190,"y":420,"wires":[["03cb69799aae3a03"],[]]},{"id":"bb41070571278ba8","type":"api-call-service","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"Living Room Lamps Off","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"light","service":"turn_off","areaId":[],"deviceId":["3d1f90039ad28309d8485f91e95fe714","877db69da5a6db3b2009fcdabd338f48"],"entityId":[],"data":"on","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":970,"y":420,"wires":[[]]},{"id":"03cb69799aae3a03","type":"api-current-state","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"House Mode == Day","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"Day","halt_if_type":"str","halt_if_compare":"is","entity_id":"input_select.house_mode","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":500,"y":420,"wires":[["2ad43f34e3c19b40"],[]]},{"id":"9af836940ce14314","type":"api-current-state","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"House Mode == Day","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"Day","halt_if_type":"str","halt_if_compare":"is","entity_id":"input_select.house_mode","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":500,"y":320,"wires":[["726a019eaa32bf3b"],[]]},{"id":"726a019eaa32bf3b","type":"time-range-switch","z":"049368fbb51358f1","g":"7625374620f2e2e0","name":"Evening","lat":"53.71986","lon":"-2.6411","startTime":"19:30","endTime":"23:55","startOffset":0,"endOffset":0,"x":720,"y":320,"wires":[["108cca404ca1a6d0"],[]]},{"id":"245d2f60afee848b","type":"server-state-changed","z":"6379f67f0d1d27f4","g":"314d02d603a84452","name":"Ambient Light Change","server":"1dd16987.0978c6","version":5,"outputs":2,"exposeAsEntityConfig":"","entityId":"sensor.study_sensor_illuminance","entityIdType":"exact","outputInitially":false,"stateType":"num","ifState":"75","ifStateType":"num","ifStateOperator":"lt","outputOnlyOnStateChange":true,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":180,"y":80,"wires":[["ea2240c4967780f2"],[]]},{"id":"ea2240c4967780f2","type":"api-current-state","z":"6379f67f0d1d27f4","g":"314d02d603a84452","name":"House Mode == Day","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"Day","halt_if_type":"str","halt_if_compare":"is","entity_id":"input_select.house_mode","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":440,"y":80,"wires":[["8faba930c72aab2d"],[]]},{"id":"584b34e1de6deda0","type":"api-call-service","z":"6379f67f0d1d27f4","g":"314d02d603a84452","name":"Turn On Outside Lights","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"switch","service":"turn_on","areaId":[],"deviceId":[],"entityId":["switch.disco_room_sockets_switch_1","switch.disco_room_sockets_switch_2","switch.outside_sockets_switch_2"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":950,"y":80,"wires":[[]]},{"id":"8faba930c72aab2d","type":"time-range-switch","z":"6379f67f0d1d27f4","g":"314d02d603a84452","name":"","lat":"50.12401","lon":"-5.30671","startTime":"10:00:00","endTime":"23:59:00","startOffset":0,"endOffset":0,"x":690,"y":80,"wires":[["584b34e1de6deda0"],[]]},{"id":"59a657d517ebe9e6","type":"inject","z":"6379f67f0d1d27f4","g":"24deed5cb7258597","name":"Leave for Work","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"30 06 * * 1,2,3,4,5","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":180,"y":200,"wires":[["2a8a8c420a1b7321"]]},{"id":"2a8a8c420a1b7321","type":"api-call-service","z":"6379f67f0d1d27f4","g":"24deed5cb7258597","name":"Porch Christmas Lights On","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"switch","service":"turn_on","areaId":[],"deviceId":[],"entityId":["switch.outside_sockets_switch_2"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":460,"y":200,"wires":[[]]},{"id":"5f7b054b5d90b4f7","type":"inject","z":"6379f67f0d1d27f4","g":"24deed5cb7258597","name":"Left for Work","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"45 06 * * 1,2,3,4,5","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":180,"y":260,"wires":[["1615ccd28d5d6b62"]]},{"id":"1615ccd28d5d6b62","type":"api-call-service","z":"6379f67f0d1d27f4","g":"24deed5cb7258597","name":"Porch Christmas Lights Off","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"switch","service":"turn_off","areaId":[],"deviceId":[],"entityId":["switch.outside_sockets_switch_2"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":460,"y":260,"wires":[[]]},{"id":"30f69ffe3d2e6dd2","type":"api-call-service","z":"36707912aa1f457f","g":"f94b8de81daa6fe8","name":"Play Message","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"notify","service":"alexa_media_kitchen_echo","areaId":[],"deviceId":[],"entityId":[],"data":"{\"message\":\"The washing machine has finished\"}","dataType":"json","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":700,"y":80,"wires":[[]]},{"id":"4ed757960569d0b9","type":"api-current-state","z":"36707912aa1f457f","g":"f94b8de81daa6fe8","name":"House Mode == Day","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"Day","halt_if_type":"str","halt_if_compare":"is","entity_id":"input_select.house_mode","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"0","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":460,"y":80,"wires":[["30f69ffe3d2e6dd2"],[]]},{"id":"4872413ddcac53c6","type":"server-state-changed","z":"36707912aa1f457f","g":"f94b8de81daa6fe8","name":"Washing Machine Finished","server":"1dd16987.0978c6","version":5,"outputs":2,"exposeAsEntityConfig":"","entityId":"sensor.siemens_wm14u940gb_68a40e036ee3_bsh_common_status_operationstate","entityIdType":"exact","outputInitially":false,"stateType":"str","ifState":"BSH.Common.EnumType.OperationState.Finished","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":true,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":190,"y":80,"wires":[["4ed757960569d0b9"],[]]},{"id":"697303f6b03a2565","type":"inject","z":"36707912aa1f457f","g":"d66c4d71ff4e7f32","name":"At 02:30","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"30 02 * * *","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":160,"y":200,"wires":[["e54e4e6f46d18749"]]},{"id":"824b2639ca586871","type":"api-call-service","z":"36707912aa1f457f","g":"d66c4d71ff4e7f32","name":"Start Washing Machine","server":"1dd16987.0978c6","version":5,"debugenabled":true,"domain":"home_connect_alt","service":"start_program","areaId":[],"deviceId":[],"entityId":[],"data":"{\"device_id\":\"f1d0acbde365a96e5a50500f9ce8f2ad\",\"program_key\":\"LaundryCare.Washer.Program.Mix\",\"validate\":true,\"options\":[{\"key\":\"LaundryCare.Washer.Option.Temperature\",\"value\":\"LaundryCare.Washer.EnumType.Temperature.GC40\"},{\"key\":\"LaundryCare.Washer.Option.SpinSpeed\",\"value\":\"LaundryCare.Washer.EnumType.SpinSpeed.RPM1400\"}]}","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":1010,"y":200,"wires":[[]]},{"id":"e54e4e6f46d18749","type":"api-current-state","z":"36707912aa1f457f","g":"d66c4d71ff4e7f32","name":"Washing Machine is Ready","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"BSH.Common.EnumType.OperationState.Ready","halt_if_type":"str","halt_if_compare":"is","entity_id":"sensor.siemens_wm14u940gb_68a40e036ee3_bsh_common_status_operationstate","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"0","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":400,"y":200,"wires":[["3cc9ab2afc21cc6b"],[]]},{"id":"3cc9ab2afc21cc6b","type":"api-current-state","z":"36707912aa1f457f","g":"d66c4d71ff4e7f32","name":"Washing Machine Remote Start","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"on","halt_if_type":"str","halt_if_compare":"is","entity_id":"binary_sensor.siemens_wm14u940gb_68a40e036ee3_bsh_common_status_remotecontrolstartallowed","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"0","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":710,"y":200,"wires":[["824b2639ca586871"],[]]},{"id":"5bb8a35c674fe66c","type":"inject","z":"83b3df7543e2c9f9","g":"3fd332fa992c7852","name":"Every 5 Minutes","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"300","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":170,"y":80,"wires":[["8fbc8a7c2791b855"]]},{"id":"8fbc8a7c2791b855","type":"api-current-state","z":"83b3df7543e2c9f9","g":"3fd332fa992c7852","name":"Check Wine Fridge Temerature","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"10","halt_if_type":"num","halt_if_compare":"gt","entity_id":"sensor.th03_temperature","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"0","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":450,"y":80,"wires":[["b16710c548e4e279"],["c1353e8c740151a2"]]},{"id":"b16710c548e4e279","type":"api-call-service","z":"83b3df7543e2c9f9","g":"3fd332fa992c7852","name":"Wine Fridge is Warm","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"input_boolean","service":"turn_on","areaId":[],"deviceId":[],"entityId":["input_boolean.wine_fridge_warm"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":740,"y":80,"wires":[[]]},{"id":"c1353e8c740151a2","type":"api-call-service","z":"83b3df7543e2c9f9","g":"3fd332fa992c7852","name":"Wine Fridge is Cold","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"input_boolean","service":"turn_off","areaId":[],"deviceId":[],"entityId":["input_boolean.wine_fridge_warm"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":730,"y":180,"wires":[[]]},{"id":"2166f611673c8eb4","type":"api-call-service","z":"98c80091b4981659","name":"Set House Mode to Day","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"input_select","service":"select_option","areaId":[],"deviceId":[],"entityId":["input_select.house_mode"],"data":"{\"option\":\"Day\"}","dataType":"json","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":370,"y":60,"wires":[[]]},{"id":"a59fa781d76c6d76","type":"sunrise","z":"98c80091b4981659","name":"","lat":"51.2266373","lon":"-0.5846005","start":"sunrise","end":"sunset","soff":0,"eoff":0,"x":130,"y":60,"wires":[[],["2166f611673c8eb4"]]},{"id":"2b90a8a862be74f5","type":"api-current-state","z":"98c80091b4981659","name":"Get Alarm State","server":"1dd16987.0978c6","version":3,"outputs":2,"halt_if":"armed_away","halt_if_type":"str","halt_if_compare":"is","entity_id":"alarm_control_panel.house","state_type":"str","blockInputOverrides":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"}],"for":"0","forType":"num","forUnits":"minutes","override_topic":false,"state_location":"payload","override_payload":"msg","entity_location":"data","override_data":"msg","x":340,"y":160,"wires":[["988d0a3eb504d732"],[]]},{"id":"988d0a3eb504d732","type":"api-call-service","z":"98c80091b4981659","name":"Run Night","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"scene","service":"turn_on","areaId":[],"deviceId":[],"entityId":["scene.night"],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":540,"y":160,"wires":[[]]},{"id":"6c9c7cdb6e0ac56d","type":"eztimer","z":"98c80091b4981659","name":"At 11:15pm","debug":false,"autoname":"23:15:00","tag":"eztimer","topic":"","suspended":false,"sendEventsOnSuspend":false,"latLongSource":"haZone","latLongHaZone":"zone.home","lat":"","lon":"","timerType":"2","startupMessage":false,"ontype":"2","ontimesun":"dawn","ontimetod":"23:15:00","onpropertytype":"msg","onproperty":"payload","onvaluetype":"num","onvalue":1,"onoffset":"-30","onrandomoffset":true,"onsuppressrepeats":false,"offtype":"1","offtimesun":"dusk","offtimetod":"dusk","offduration":"00:01:00","offpropertytype":"msg","offproperty":"payload","offvaluetype":"num","offvalue":0,"offoffset":0,"offrandomoffset":0,"offsuppressrepeats":false,"resend":false,"resendInterval":"0s","mon":true,"tue":true,"wed":true,"thu":true,"fri":true,"sat":true,"sun":true,"x":130,"y":160,"wires":[["2b90a8a862be74f5"]]},{"id":"eec71dfcb83ec120","type":"api-call-service","z":"ced01d7c7ed36fed","name":"Start LetsEncrypt","server":"1dd16987.0978c6","version":5,"debugenabled":false,"domain":"hassio","service":"addon_start","areaId":[],"deviceId":[],"entityId":[],"data":"{\"addon\":\"core_letsencrypt\"}","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","x":330,"y":40,"wires":[[]]},{"id":"3a461bc7e24ad259","type":"inject","z":"ced01d7c7ed36fed","name":"00:05","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"05 00 * * *","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":120,"y":40,"wires":[["eec71dfcb83ec120"]]}]
+[
+    {
+        "id": "049368fbb51358f1",
+        "type": "tab",
+        "label": "Lights",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6379f67f0d1d27f4",
+        "type": "tab",
+        "label": "Christmas Lights",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "36707912aa1f457f",
+        "type": "tab",
+        "label": "Washing Machine",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "83b3df7543e2c9f9",
+        "type": "tab",
+        "label": "Wine Fridge",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "98c80091b4981659",
+        "type": "tab",
+        "label": "House Mode",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ced01d7c7ed36fed",
+        "type": "tab",
+        "label": "Run LetsEncrypt",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "80da3ac02bdf624c",
+        "type": "group",
+        "z": "049368fbb51358f1",
+        "name": "Island Lights Night",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "af1449fc1b71965f",
+            "9f98d16deb53b04e",
+            "72872da00c41da5d",
+            "4701654dd07e30c2",
+            "5621d2937720fb15",
+            "99e5757e3be2c737"
+        ],
+        "x": 54,
+        "y": 39,
+        "w": 732,
+        "h": 182
+    },
+    {
+        "id": "7625374620f2e2e0",
+        "type": "group",
+        "z": "049368fbb51358f1",
+        "name": "Living Room Lights Evening",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2086e63f1dc6cc9b",
+            "108cca404ca1a6d0",
+            "2ad43f34e3c19b40",
+            "f589455b3d550764",
+            "bb41070571278ba8",
+            "03cb69799aae3a03",
+            "9af836940ce14314",
+            "726a019eaa32bf3b"
+        ],
+        "x": 54,
+        "y": 279,
+        "w": 1052,
+        "h": 182
+    },
+    {
+        "id": "f94b8de81daa6fe8",
+        "type": "group",
+        "z": "36707912aa1f457f",
+        "name": "Washing Machine Finished",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "30f69ffe3d2e6dd2",
+            "4ed757960569d0b9",
+            "4872413ddcac53c6"
+        ],
+        "x": 54,
+        "y": 39,
+        "w": 752,
+        "h": 82
+    },
+    {
+        "id": "d66c4d71ff4e7f32",
+        "type": "group",
+        "z": "36707912aa1f457f",
+        "name": "Start Washing Machine",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "697303f6b03a2565",
+            "824b2639ca586871",
+            "e54e4e6f46d18749",
+            "3cc9ab2afc21cc6b"
+        ],
+        "x": 54,
+        "y": 159,
+        "w": 1092,
+        "h": 82
+    },
+    {
+        "id": "3fd332fa992c7852",
+        "type": "group",
+        "z": "83b3df7543e2c9f9",
+        "name": "Monitor Temperature",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5bb8a35c674fe66c",
+            "8fbc8a7c2791b855",
+            "b16710c548e4e279",
+            "c1353e8c740151a2"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 832,
+        "h": 182
+    },
+    {
+        "id": "24deed5cb7258597",
+        "type": "group",
+        "z": "6379f67f0d1d27f4",
+        "name": "Porch Lights",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59a657d517ebe9e6",
+            "2a8a8c420a1b7321",
+            "5f7b054b5d90b4f7",
+            "1615ccd28d5d6b62"
+        ],
+        "x": 54,
+        "y": 159,
+        "w": 552,
+        "h": 142
+    },
+    {
+        "id": "314d02d603a84452",
+        "type": "group",
+        "z": "6379f67f0d1d27f4",
+        "name": "Outside Lights",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "245d2f60afee848b",
+            "ea2240c4967780f2",
+            "584b34e1de6deda0",
+            "8faba930c72aab2d"
+        ],
+        "x": 54,
+        "y": 39,
+        "w": 1032,
+        "h": 82
+    },
+    {
+        "id": "1dd16987.0978c6",
+        "type": "server",
+        "name": "Home Assistant",
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "",
+        "connectionDelay": false,
+        "cacheJson": false,
+        "heartbeat": false,
+        "heartbeatInterval": "",
+        "statusSeparator": "",
+        "enableGlobalContextStore": false
+    },
+    {
+        "id": "af1449fc1b71965f",
+        "type": "server-state-changed",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "Hallway Presence On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.nest_protect_hallway_occupancy",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 180,
+        "y": 80,
+        "wires": [
+            [
+                "5621d2937720fb15"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9f98d16deb53b04e",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "Island Lights On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.island_lights_switch"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72872da00c41da5d",
+        "type": "server-state-changed",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "Hallway Presence Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.nest_protect_hallway_occupancy",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "99e5757e3be2c737"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4701654dd07e30c2",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "Island Lights Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.island_lights_switch"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5621d2937720fb15",
+        "type": "api-current-state",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "House Mode == Night",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Night",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "9f98d16deb53b04e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "99e5757e3be2c737",
+        "type": "api-current-state",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "House Mode == Night",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Night",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "4701654dd07e30c2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2086e63f1dc6cc9b",
+        "type": "server-state-changed",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "Living Room Presence On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.living_room_presence_sensor_occupancy",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "9af836940ce14314"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "108cca404ca1a6d0",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "Living Room Lamps On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "3d1f90039ad28309d8485f91e95fe714",
+            "877db69da5a6db3b2009fcdabd338f48"
+        ],
+        "entityId": [],
+        "data": "on",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 970,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ad43f34e3c19b40",
+        "type": "time-range-switch",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "Evening",
+        "lat": "53.71986",
+        "lon": "-2.6411",
+        "startTime": "19:30",
+        "endTime": "23:55",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 720,
+        "y": 420,
+        "wires": [
+            [
+                "bb41070571278ba8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f589455b3d550764",
+        "type": "server-state-changed",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "Living Room Presence Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.living_room_presence_sensor_occupancy",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "2",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 420,
+        "wires": [
+            [
+                "03cb69799aae3a03"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bb41070571278ba8",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "Living Room Lamps Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "3d1f90039ad28309d8485f91e95fe714",
+            "877db69da5a6db3b2009fcdabd338f48"
+        ],
+        "entityId": [],
+        "data": "on",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 970,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "03cb69799aae3a03",
+        "type": "api-current-state",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "House Mode == Day",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Day",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 500,
+        "y": 420,
+        "wires": [
+            [
+                "2ad43f34e3c19b40"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9af836940ce14314",
+        "type": "api-current-state",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "House Mode == Day",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Day",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "726a019eaa32bf3b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "726a019eaa32bf3b",
+        "type": "time-range-switch",
+        "z": "049368fbb51358f1",
+        "g": "7625374620f2e2e0",
+        "name": "Evening",
+        "lat": "53.71986",
+        "lon": "-2.6411",
+        "startTime": "19:30",
+        "endTime": "23:55",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 720,
+        "y": 320,
+        "wires": [
+            [
+                "108cca404ca1a6d0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "245d2f60afee848b",
+        "type": "server-state-changed",
+        "z": "6379f67f0d1d27f4",
+        "g": "314d02d603a84452",
+        "name": "Ambient Light Change",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.study_sensor_illuminance",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "num",
+        "ifState": "75",
+        "ifStateType": "num",
+        "ifStateOperator": "lt",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 180,
+        "y": 80,
+        "wires": [
+            [
+                "ea2240c4967780f2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ea2240c4967780f2",
+        "type": "api-current-state",
+        "z": "6379f67f0d1d27f4",
+        "g": "314d02d603a84452",
+        "name": "House Mode == Day",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Day",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "8faba930c72aab2d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "584b34e1de6deda0",
+        "type": "api-call-service",
+        "z": "6379f67f0d1d27f4",
+        "g": "314d02d603a84452",
+        "name": "Turn On Outside Lights",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.disco_room_sockets_switch_1",
+            "switch.disco_room_sockets_switch_2",
+            "switch.outside_sockets_switch_2"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8faba930c72aab2d",
+        "type": "time-range-switch",
+        "z": "6379f67f0d1d27f4",
+        "g": "314d02d603a84452",
+        "name": "",
+        "lat": "50.12401",
+        "lon": "-5.30671",
+        "startTime": "10:00:00",
+        "endTime": "23:59:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 690,
+        "y": 80,
+        "wires": [
+            [
+                "584b34e1de6deda0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "59a657d517ebe9e6",
+        "type": "inject",
+        "z": "6379f67f0d1d27f4",
+        "g": "24deed5cb7258597",
+        "name": "Leave for Work",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 06 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "2a8a8c420a1b7321"
+            ]
+        ]
+    },
+    {
+        "id": "2a8a8c420a1b7321",
+        "type": "api-call-service",
+        "z": "6379f67f0d1d27f4",
+        "g": "24deed5cb7258597",
+        "name": "Porch Christmas Lights On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.outside_sockets_switch_2"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f7b054b5d90b4f7",
+        "type": "inject",
+        "z": "6379f67f0d1d27f4",
+        "g": "24deed5cb7258597",
+        "name": "Left for Work",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "45 06 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "1615ccd28d5d6b62"
+            ]
+        ]
+    },
+    {
+        "id": "1615ccd28d5d6b62",
+        "type": "api-call-service",
+        "z": "6379f67f0d1d27f4",
+        "g": "24deed5cb7258597",
+        "name": "Porch Christmas Lights Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.outside_sockets_switch_2"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30f69ffe3d2e6dd2",
+        "type": "api-call-service",
+        "z": "36707912aa1f457f",
+        "g": "f94b8de81daa6fe8",
+        "name": "Play Message",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_kitchen_echo",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"The washing machine has finished\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ed757960569d0b9",
+        "type": "api-current-state",
+        "z": "36707912aa1f457f",
+        "g": "f94b8de81daa6fe8",
+        "name": "House Mode == Day",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Day",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 460,
+        "y": 80,
+        "wires": [
+            [
+                "30f69ffe3d2e6dd2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4872413ddcac53c6",
+        "type": "server-state-changed",
+        "z": "36707912aa1f457f",
+        "g": "f94b8de81daa6fe8",
+        "name": "Washing Machine Finished",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.siemens_wm14u940gb_68a40e036ee3_bsh_common_status_operationstate",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "BSH.Common.EnumType.OperationState.Finished",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "4ed757960569d0b9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "697303f6b03a2565",
+        "type": "inject",
+        "z": "36707912aa1f457f",
+        "g": "d66c4d71ff4e7f32",
+        "name": "At 02:30",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 02 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "e54e4e6f46d18749"
+            ]
+        ]
+    },
+    {
+        "id": "824b2639ca586871",
+        "type": "api-call-service",
+        "z": "36707912aa1f457f",
+        "g": "d66c4d71ff4e7f32",
+        "name": "Start Washing Machine",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": true,
+        "domain": "home_connect_alt",
+        "service": "start_program",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"device_id\":\"f1d0acbde365a96e5a50500f9ce8f2ad\",\"program_key\":\"LaundryCare.Washer.Program.Mix\",\"validate\":true,\"options\":[{\"key\":\"LaundryCare.Washer.Option.Temperature\",\"value\":\"LaundryCare.Washer.EnumType.Temperature.GC40\"},{\"key\":\"LaundryCare.Washer.Option.SpinSpeed\",\"value\":\"LaundryCare.Washer.EnumType.SpinSpeed.RPM1400\"}]}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1010,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e54e4e6f46d18749",
+        "type": "api-current-state",
+        "z": "36707912aa1f457f",
+        "g": "d66c4d71ff4e7f32",
+        "name": "Washing Machine is Ready",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "BSH.Common.EnumType.OperationState.Ready",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.siemens_wm14u940gb_68a40e036ee3_bsh_common_status_operationstate",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "3cc9ab2afc21cc6b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3cc9ab2afc21cc6b",
+        "type": "api-current-state",
+        "z": "36707912aa1f457f",
+        "g": "d66c4d71ff4e7f32",
+        "name": "Washing Machine Remote Start",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.siemens_wm14u940gb_68a40e036ee3_bsh_common_status_remotecontrolstartallowed",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 710,
+        "y": 200,
+        "wires": [
+            [
+                "824b2639ca586871"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5bb8a35c674fe66c",
+        "type": "inject",
+        "z": "83b3df7543e2c9f9",
+        "g": "3fd332fa992c7852",
+        "name": "Every 5 Minutes",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "8fbc8a7c2791b855"
+            ]
+        ]
+    },
+    {
+        "id": "8fbc8a7c2791b855",
+        "type": "api-current-state",
+        "z": "83b3df7543e2c9f9",
+        "g": "3fd332fa992c7852",
+        "name": "Check Wine Fridge Temerature",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "10",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "entity_id": "sensor.th03_temperature",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 450,
+        "y": 80,
+        "wires": [
+            [
+                "b16710c548e4e279"
+            ],
+            [
+                "c1353e8c740151a2"
+            ]
+        ]
+    },
+    {
+        "id": "b16710c548e4e279",
+        "type": "api-call-service",
+        "z": "83b3df7543e2c9f9",
+        "g": "3fd332fa992c7852",
+        "name": "Wine Fridge is Warm",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.wine_fridge_warm"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 740,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1353e8c740151a2",
+        "type": "api-call-service",
+        "z": "83b3df7543e2c9f9",
+        "g": "3fd332fa992c7852",
+        "name": "Wine Fridge is Cold",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.wine_fridge_warm"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 730,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2166f611673c8eb4",
+        "type": "api-call-service",
+        "z": "98c80091b4981659",
+        "name": "Set House Mode to Day",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_select",
+        "service": "select_option",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_select.house_mode"
+        ],
+        "data": "{\"option\":\"Day\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 370,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a59fa781d76c6d76",
+        "type": "sunrise",
+        "z": "98c80091b4981659",
+        "name": "",
+        "lat": "51.2266373",
+        "lon": "-0.5846005",
+        "start": "sunrise",
+        "end": "sunset",
+        "soff": 0,
+        "eoff": 0,
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [],
+            [
+                "2166f611673c8eb4"
+            ]
+        ]
+    },
+    {
+        "id": "2b90a8a862be74f5",
+        "type": "api-current-state",
+        "z": "98c80091b4981659",
+        "name": "Get Alarm State",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "armed_away",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "alarm_control_panel.house",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "988d0a3eb504d732"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "988d0a3eb504d732",
+        "type": "api-call-service",
+        "z": "98c80091b4981659",
+        "name": "Run Night",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "scene",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "scene.night"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 540,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6c9c7cdb6e0ac56d",
+        "type": "eztimer",
+        "z": "98c80091b4981659",
+        "name": "At 11:15pm",
+        "debug": false,
+        "autoname": "23:15:00",
+        "tag": "eztimer",
+        "topic": "",
+        "suspended": false,
+        "sendEventsOnSuspend": false,
+        "latLongSource": "haZone",
+        "latLongHaZone": "zone.home",
+        "lat": "",
+        "lon": "",
+        "timerType": "2",
+        "startupMessage": false,
+        "ontype": "2",
+        "ontimesun": "dawn",
+        "ontimetod": "23:15:00",
+        "onpropertytype": "msg",
+        "onproperty": "payload",
+        "onvaluetype": "num",
+        "onvalue": 1,
+        "onoffset": "-30",
+        "onrandomoffset": true,
+        "onsuppressrepeats": false,
+        "offtype": "1",
+        "offtimesun": "dusk",
+        "offtimetod": "dusk",
+        "offduration": "00:01:00",
+        "offpropertytype": "msg",
+        "offproperty": "payload",
+        "offvaluetype": "num",
+        "offvalue": 0,
+        "offoffset": 0,
+        "offrandomoffset": 0,
+        "offsuppressrepeats": false,
+        "resend": false,
+        "resendInterval": "0s",
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "2b90a8a862be74f5"
+            ]
+        ]
+    },
+    {
+        "id": "eec71dfcb83ec120",
+        "type": "api-call-service",
+        "z": "ced01d7c7ed36fed",
+        "name": "Start LetsEncrypt",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "hassio",
+        "service": "addon_start",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"addon\":\"core_letsencrypt\"}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 330,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a461bc7e24ad259",
+        "type": "inject",
+        "z": "ced01d7c7ed36fed",
+        "name": "00:05",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "05 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "eec71dfcb83ec120"
+            ]
+        ]
+    }
+]
