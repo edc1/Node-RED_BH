@@ -1,0 +1,12 @@
+{
+    "name": "Node-RED_BH",
+    "description": "Node-RED flows for BH",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
