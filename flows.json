@@ -88,7 +88,7 @@
         ],
         "x": 54,
         "y": 279,
-        "w": 1052,
+        "w": 992,
         "h": 182
     },
     {
@@ -184,6 +184,27 @@
         "y": 39,
         "w": 1032,
         "h": 82
+    },
+    {
+        "id": "f9a5a895f56ead7d",
+        "type": "group",
+        "z": "049368fbb51358f1",
+        "name": "Zigbee Switch 1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2cb42c0aaa5b2c89",
+            "d3313ebb9c3da19f",
+            "e60777a3cdbe9384",
+            "9fdfa64ab097db2e",
+            "87a9648568f2f25f",
+            "8352ffad8b1f50cf"
+        ],
+        "x": 54,
+        "y": 519,
+        "w": 852,
+        "h": 202
     },
     {
         "id": "1dd16987.0978c6",
@@ -535,7 +556,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 970,
+        "x": 910,
         "y": 320,
         "wires": [
             []
@@ -553,7 +574,7 @@
         "endTime": "23:55",
         "startOffset": 0,
         "endOffset": 0,
-        "x": 720,
+        "x": 680,
         "y": 420,
         "wires": [
             [
@@ -640,7 +661,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 970,
+        "x": 910,
         "y": 420,
         "wires": [
             []
@@ -683,7 +704,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 500,
+        "x": 460,
         "y": 420,
         "wires": [
             [
@@ -729,7 +750,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 500,
+        "x": 460,
         "y": 320,
         "wires": [
             [
@@ -750,12 +771,198 @@
         "endTime": "23:55",
         "startOffset": 0,
         "endOffset": 0,
-        "x": 720,
+        "x": 680,
         "y": 320,
         "wires": [
             [
                 "108cca404ca1a6d0"
             ],
+            []
+        ]
+    },
+    {
+        "id": "2cb42c0aaa5b2c89",
+        "type": "server-events",
+        "z": "049368fbb51358f1",
+        "g": "f9a5a895f56ead7d",
+        "name": "",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "exposeAsEntityConfig": "",
+        "eventType": "zha_event",
+        "eventData": "",
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "d3313ebb9c3da19f"
+            ]
+        ]
+    },
+    {
+        "id": "d3313ebb9c3da19f",
+        "type": "switch",
+        "z": "049368fbb51358f1",
+        "g": "f9a5a895f56ead7d",
+        "name": "Zigbee Switch 1",
+        "property": "payload.event.device_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "afc9200b5211793d99a9f0367345cb6b",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "e60777a3cdbe9384"
+            ]
+        ]
+    },
+    {
+        "id": "e60777a3cdbe9384",
+        "type": "switch",
+        "z": "049368fbb51358f1",
+        "g": "f9a5a895f56ead7d",
+        "name": "Commands",
+        "property": "payload.event.command",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "toggle",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 610,
+        "y": 620,
+        "wires": [
+            [
+                "9fdfa64ab097db2e"
+            ],
+            [
+                "8352ffad8b1f50cf"
+            ],
+            [
+                "87a9648568f2f25f"
+            ]
+        ]
+    },
+    {
+        "id": "9fdfa64ab097db2e",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "f9a5a895f56ead7d",
+        "name": "Light Toggle",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "toggle",
+        "areaId": [],
+        "deviceId": [
+            "218ab0772d94da7ccd2a25243c49fcbc"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 810,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87a9648568f2f25f",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "f9a5a895f56ead7d",
+        "name": "Light Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "218ab0772d94da7ccd2a25243c49fcbc"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 800,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8352ffad8b1f50cf",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "f9a5a895f56ead7d",
+        "name": "Light On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "218ab0772d94da7ccd2a25243c49fcbc"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 800,
+        "y": 620,
+        "wires": [
             []
         ]
     },
