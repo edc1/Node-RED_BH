@@ -18,7 +18,7 @@
     {
         "id": "36707912aa1f457f",
         "type": "tab",
-        "label": "Washing Machine",
+        "label": "Washing / Drying",
         "disabled": false,
         "info": "",
         "env": []
@@ -48,17 +48,17 @@
         "env": []
     },
     {
-        "id": "90f591cac8d4f2d9",
+        "id": "3a4a4140ad6645a3",
         "type": "tab",
-        "label": "Music",
-        "disabled": true,
+        "label": "EV Charging",
+        "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "3a4a4140ad6645a3",
+        "id": "731c55c4b09a7c5a",
         "type": "tab",
-        "label": "EV Charging",
+        "label": "Music Block",
         "disabled": false,
         "info": "",
         "env": []
@@ -77,12 +77,14 @@
             "72872da00c41da5d",
             "4701654dd07e30c2",
             "5621d2937720fb15",
-            "99e5757e3be2c737"
+            "99e5757e3be2c737",
+            "86c474d7b2bf1e05",
+            "61e6369447c7035f"
         ],
         "x": 54,
-        "y": 39,
-        "w": 732,
-        "h": 182
+        "y": 19,
+        "w": 772,
+        "h": 262
     },
     {
         "id": "7625374620f2e2e0",
@@ -267,6 +269,26 @@
         "h": 262
     },
     {
+        "id": "c007e1dde9cb920e",
+        "type": "group",
+        "z": "36707912aa1f457f",
+        "name": "Dryer Run",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e2294a296af308b7",
+            "892bd3539daab1a5",
+            "372a410ad19d586b",
+            "f670457e61eb5cf4",
+            "147fced577b9b1d3"
+        ],
+        "x": 54,
+        "y": 399,
+        "w": 1112,
+        "h": 142
+    },
+    {
         "id": "1dd16987.0978c6",
         "type": "server",
         "name": "Home Assistant",
@@ -279,6 +301,29 @@
         "heartbeatInterval": "",
         "statusSeparator": "",
         "enableGlobalContextStore": false
+    },
+    {
+        "id": "c15ef13e.967e1",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": 30,
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
     },
     {
         "id": "af1449fc1b71965f",
@@ -327,7 +372,7 @@
             }
         ],
         "x": 180,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "5621d2937720fb15"
@@ -358,7 +403,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 680,
-        "y": 80,
+        "y": 60,
         "wires": [
             []
         ]
@@ -484,10 +529,11 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 440,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
-                "9f98d16deb53b04e"
+                "9f98d16deb53b04e",
+                "86c474d7b2bf1e05"
             ],
             []
         ]
@@ -533,7 +579,8 @@
         "y": 180,
         "wires": [
             [
-                "4701654dd07e30c2"
+                "4701654dd07e30c2",
+                "61e6369447c7035f"
             ],
             []
         ]
@@ -1213,6 +1260,62 @@
         ]
     },
     {
+        "id": "86c474d7b2bf1e05",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "Utility Room Lights On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "8c80b1b34b177bd3eb918f20dd7f7bfe"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61e6369447c7035f",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "80da3ac02bdf624c",
+        "name": "Utility Room Lights On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "8c80b1b34b177bd3eb918f20dd7f7bfe"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "245d2f60afee848b",
         "type": "server-state-changed",
         "z": "6379f67f0d1d27f4",
@@ -1864,6 +1967,205 @@
         ]
     },
     {
+        "id": "e2294a296af308b7",
+        "type": "inject",
+        "z": "36707912aa1f457f",
+        "g": "c007e1dde9cb920e",
+        "name": "At 13:30",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 13 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "892bd3539daab1a5",
+        "type": "api-call-service",
+        "z": "36707912aa1f457f",
+        "g": "c007e1dde9cb920e",
+        "name": "Start Dryer",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": true,
+        "domain": "home_connect_alt",
+        "service": "start_program",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"device_id\":\"58a6d48ff34d61b91bfe5d84c68e7480\",\"program_key\":\"LaundryCare.Dryer.Program.MyTime.MyDryingTime\",\"validate\":true,\"options\":[{\"key\":\"BSH.Common.Option.Duration\",\"value\":7200}]}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1070,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "372a410ad19d586b",
+        "type": "api-current-state",
+        "z": "36707912aa1f457f",
+        "g": "c007e1dde9cb920e",
+        "name": "Dryer is Ready",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "BSH.Common.EnumType.OperationState.Ready",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.siemens_wt7xh940gb_68a40e264dbd_bsh_common_status_operationstate",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 460,
+        "y": 460,
+        "wires": [
+            [
+                "f670457e61eb5cf4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f670457e61eb5cf4",
+        "type": "api-current-state",
+        "z": "36707912aa1f457f",
+        "g": "c007e1dde9cb920e",
+        "name": "Dryer Remote Start",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.siemens_wt7xh940gb_68a40e264dbd_bsh_common_status_remotecontrolstartallowed",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 770,
+        "y": 460,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "147fced577b9b1d3",
+        "type": "server-state-changed",
+        "z": "36707912aa1f457f",
+        "g": "c007e1dde9cb920e",
+        "name": "Target Energy Price is On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.octopus_energy_target_dryer_night_target",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 500,
+        "wires": [
+            [
+                "372a410ad19d586b"
+            ],
+            []
+        ]
+    },
+    {
         "id": "5bb8a35c674fe66c",
         "type": "inject",
         "z": "83b3df7543e2c9f9",
@@ -2226,80 +2528,6 @@
         ]
     },
     {
-        "id": "012701829c319399",
-        "type": "debug",
-        "z": "90f591cac8d4f2d9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "22a9fb102cedca06",
-        "type": "server-events",
-        "z": "90f591cac8d4f2d9",
-        "name": "",
-        "server": "1dd16987.0978c6",
-        "version": 3,
-        "exposeAsEntityConfig": "",
-        "eventType": "state_changed",
-        "eventData": "",
-        "waitForRunning": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "$outputData(\"eventData\").event_type",
-                "valueType": "jsonata"
-            }
-        ],
-        "x": 500,
-        "y": 200,
-        "wires": [
-            [
-                "2cfe95fca33d849c"
-            ]
-        ]
-    },
-    {
-        "id": "2cfe95fca33d849c",
-        "type": "switch",
-        "z": "90f591cac8d4f2d9",
-        "name": "",
-        "property": "payload.entity_id",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "media_player.emlyn_s_echo_show",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 850,
-        "y": 220,
-        "wires": [
-            [
-                "012701829c319399"
-            ]
-        ]
-    },
-    {
         "id": "2b7fc5ea51bd48b5",
         "type": "server-state-changed",
         "z": "3a4a4140ad6645a3",
@@ -2572,6 +2800,341 @@
             [
                 "99e5715f0c78d45b"
             ],
+            []
+        ]
+    },
+    {
+        "id": "9c7a8ca5.55318",
+        "type": "switch",
+        "z": "731c55c4b09a7c5a",
+        "name": "Artist to block",
+        "property": "data.new_state.attributes.media_artist",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "crazy frog",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "parry gripp",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 960,
+        "y": 140,
+        "wires": [
+            [
+                "fc30e1432cbe494f"
+            ],
+            [
+                "fc30e1432cbe494f"
+            ]
+        ]
+    },
+    {
+        "id": "f84eebe3.df7ea",
+        "type": "api-call-service",
+        "z": "731c55c4b09a7c5a",
+        "name": "Stop",
+        "server": "c15ef13e.967e1",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "media_stop",
+        "areaId": [],
+        "deviceId": [
+            "e8c2662e7f51e373d7661bf9f7810e40"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1370,
+        "y": 140,
+        "wires": [
+            [
+                "24e5f14d9cd5cbf5"
+            ]
+        ]
+    },
+    {
+        "id": "bb4b9001.ba0ee",
+        "type": "server-state-changed",
+        "z": "731c55c4b09a7c5a",
+        "name": "",
+        "server": "c15ef13e.967e1",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "media_player.*",
+        "entityIdType": "regex",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "playing",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "17d67da6.487752"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e7fd3fc5.5d1948",
+        "type": "function",
+        "z": "731c55c4b09a7c5a",
+        "name": "ToLower",
+        "func": "\nmsg.data.new_state.attributes.media_artist = msg.data.new_state.attributes.media_artist.toLowerCase();\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 140,
+        "wires": [
+            [
+                "9c7a8ca5.55318"
+            ]
+        ]
+    },
+    {
+        "id": "17d67da6.487752",
+        "type": "delay",
+        "z": "731c55c4b09a7c5a",
+        "name": "",
+        "pauseType": "queue",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "e7fd3fc5.5d1948"
+            ]
+        ]
+    },
+    {
+        "id": "24e5f14d9cd5cbf5",
+        "type": "api-call-service",
+        "z": "731c55c4b09a7c5a",
+        "name": "Play Message",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_emlyn_s_echo_show",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Nooo. Not that.\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc30e1432cbe494f",
+        "type": "switch",
+        "z": "731c55c4b09a7c5a",
+        "name": "",
+        "property": "data.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "media_player.emlyn_s_echo_show",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "media_player.kitchen_echo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "media_player.study_dot",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1190,
+        "y": 140,
+        "wires": [
+            [
+                "f84eebe3.df7ea"
+            ],
+            [
+                "8a6fd1600e73952d"
+            ],
+            [
+                "b7db3d34406e8e82"
+            ]
+        ]
+    },
+    {
+        "id": "8a6fd1600e73952d",
+        "type": "api-call-service",
+        "z": "731c55c4b09a7c5a",
+        "name": "Stop",
+        "server": "c15ef13e.967e1",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "media_stop",
+        "areaId": [],
+        "deviceId": [
+            "25ce59e2d6832c66c5778ee9ccf4af76"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1370,
+        "y": 220,
+        "wires": [
+            [
+                "d50798de1950e3e8"
+            ]
+        ]
+    },
+    {
+        "id": "d50798de1950e3e8",
+        "type": "api-call-service",
+        "z": "731c55c4b09a7c5a",
+        "name": "Play Message",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_kitchen_echo",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Nooo. Not that.\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7db3d34406e8e82",
+        "type": "api-call-service",
+        "z": "731c55c4b09a7c5a",
+        "name": "Stop",
+        "server": "c15ef13e.967e1",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "media_stop",
+        "areaId": [],
+        "deviceId": [
+            "c16cf79625991e0570125576a6a4c8e5"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1370,
+        "y": 300,
+        "wires": [
+            [
+                "a40275e653d37e5f"
+            ]
+        ]
+    },
+    {
+        "id": "a40275e653d37e5f",
+        "type": "api-call-service",
+        "z": "731c55c4b09a7c5a",
+        "name": "Play Message",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_study_dot",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"No Owen. That's not allowed.\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 300,
+        "wires": [
             []
         ]
     }
