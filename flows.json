@@ -188,7 +188,7 @@
         "id": "f9a5a895f56ead7d",
         "type": "group",
         "z": "049368fbb51358f1",
-        "name": "Zigbee Switch 1",
+        "name": "Zigbee Switch 1 - Clara's Lights",
         "style": {
             "label": true
         },
@@ -209,7 +209,7 @@
         "id": "33a3d7d58c0732f0",
         "type": "group",
         "z": "049368fbb51358f1",
-        "name": "Zigbee Switch 2",
+        "name": "Zigbee Switch 2 - Owen's Lamp",
         "style": {
             "label": true
         },
@@ -287,6 +287,28 @@
         "y": 399,
         "w": 1112,
         "h": 142
+    },
+    {
+        "id": "5a2baa393ed09463",
+        "type": "group",
+        "z": "049368fbb51358f1",
+        "name": "Dressing Room Lights",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3dbbfa06548dd1e9",
+            "fd299a0d35cbe195",
+            "f34e17e75dea0eb5",
+            "6ea673fd2ce4f2d7",
+            "e2f3d157c43a4a07",
+            "40b14878bcf79959",
+            "0f053bb4721de393"
+        ],
+        "x": 54,
+        "y": 1059,
+        "w": 912,
+        "h": 202
     },
     {
         "id": "1dd16987.0978c6",
@@ -1268,11 +1290,11 @@
         "server": "1dd16987.0978c6",
         "version": 5,
         "debugenabled": false,
-        "domain": "light",
+        "domain": "switch",
         "service": "turn_on",
         "areaId": [],
         "deviceId": [
-            "8c80b1b34b177bd3eb918f20dd7f7bfe"
+            "2842e540cafa3871d21a93234584fce4"
         ],
         "entityId": [],
         "data": "",
@@ -1292,15 +1314,15 @@
         "type": "api-call-service",
         "z": "049368fbb51358f1",
         "g": "80da3ac02bdf624c",
-        "name": "Utility Room Lights On",
+        "name": "Utility Room Lights Off",
         "server": "1dd16987.0978c6",
         "version": 5,
         "debugenabled": false,
-        "domain": "light",
+        "domain": "switch",
         "service": "turn_off",
         "areaId": [],
         "deviceId": [
-            "8c80b1b34b177bd3eb918f20dd7f7bfe"
+            "2842e540cafa3871d21a93234584fce4"
         ],
         "entityId": [],
         "data": "",
@@ -1311,6 +1333,293 @@
         "queue": "none",
         "x": 700,
         "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3dbbfa06548dd1e9",
+        "type": "server-state-changed",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "Dressing Room Sensor On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.dressing_room_sensor_occupancy",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 1120,
+        "wires": [
+            [
+                "6ea673fd2ce4f2d7",
+                "f34e17e75dea0eb5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fd299a0d35cbe195",
+        "type": "server-state-changed",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "Dressing Room Sensor Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.dressing_room_sensor_occupancy",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 1200,
+        "wires": [
+            [
+                "0f053bb4721de393"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f34e17e75dea0eb5",
+        "type": "api-current-state",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "House Mode == Night",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Night",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 480,
+        "y": 1100,
+        "wires": [
+            [
+                "40b14878bcf79959"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6ea673fd2ce4f2d7",
+        "type": "api-current-state",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "House Mode == Day",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Day",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.house_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 480,
+        "y": 1160,
+        "wires": [
+            [
+                "e2f3d157c43a4a07"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e2f3d157c43a4a07",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "Dressing Room Lights On 100%",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "8c7879b9e2440db0819b1412f8cee0eb"
+        ],
+        "entityId": [],
+        "data": "{\"brightness_pct\":100}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 810,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "40b14878bcf79959",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "Dressing Room Lights On 15%",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "8c7879b9e2440db0819b1412f8cee0eb"
+        ],
+        "entityId": [],
+        "data": "{\"brightness_pct\":15}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 810,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f053bb4721de393",
+        "type": "api-call-service",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "Dressing Room Lights Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [
+            "8c7879b9e2440db0819b1412f8cee0eb"
+        ],
+        "entityId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 790,
+        "y": 1220,
         "wires": [
             []
         ]
@@ -2008,7 +2317,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"device_id\":\"58a6d48ff34d61b91bfe5d84c68e7480\",\"program_key\":\"LaundryCare.Dryer.Program.MyTime.MyDryingTime\",\"validate\":true,\"options\":[{\"key\":\"BSH.Common.Option.Duration\",\"value\":7200}]}",
+        "data": "{\t    \"device_id\": \"58a6d48ff34d61b91bfe5d84c68e7480\",\t    \"program_key\": \"LaundryCare.Dryer.Program.TimeWarm\",\t    \"validate\": true,\t    \"options\": [\t        {\t            \"key\": \"BSH.Common.Option.Duration\",\t            \"value\": 3600\t        }\t    ]\t}",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -2106,7 +2415,9 @@
         "x": 770,
         "y": 460,
         "wires": [
-            [],
+            [
+                "892bd3539daab1a5"
+            ],
             []
         ]
     },
@@ -2120,7 +2431,7 @@
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.octopus_energy_target_dryer_night_target",
+        "entityId": "binary_sensor.octopus_energy_target_dryer_day_target",
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
