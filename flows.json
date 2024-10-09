@@ -105,7 +105,7 @@
             "726a019eaa32bf3b"
         ],
         "x": 54,
-        "y": 279,
+        "y": 299,
         "w": 992,
         "h": 182
     },
@@ -201,7 +201,7 @@
             "8352ffad8b1f50cf"
         ],
         "x": 54,
-        "y": 519,
+        "y": 499,
         "w": 852,
         "h": 202
     },
@@ -209,7 +209,7 @@
         "id": "33a3d7d58c0732f0",
         "type": "group",
         "z": "049368fbb51358f1",
-        "name": "Zigbee Switch 2 - Owen's Lamp",
+        "name": "Zigbee Switch 3 - Owen's Lamp",
         "style": {
             "label": true
         },
@@ -222,7 +222,7 @@
             "660955855ec9a3f0"
         ],
         "x": 54,
-        "y": 779,
+        "y": 719,
         "w": 852,
         "h": 202
     },
@@ -261,12 +261,15 @@
             "732c6c3a1700068a",
             "99e5715f0c78d45b",
             "4d15ea3a7a62338a",
-            "912d186058e1a2cf"
+            "912d186058e1a2cf",
+            "744cebedb261bd98",
+            "b55638be391227ff",
+            "e4af50efbb5e8497"
         ],
         "x": 54,
         "y": 39,
-        "w": 552,
-        "h": 262
+        "w": 972,
+        "h": 382
     },
     {
         "id": "c007e1dde9cb920e",
@@ -303,11 +306,13 @@
             "6ea673fd2ce4f2d7",
             "e2f3d157c43a4a07",
             "40b14878bcf79959",
-            "0f053bb4721de393"
+            "0f053bb4721de393",
+            "cb9b6a4b7aaed1f2",
+            "c15133313ffdba4d"
         ],
         "x": 54,
-        "y": 1059,
-        "w": 912,
+        "y": 939,
+        "w": 1072,
         "h": 202
     },
     {
@@ -654,7 +659,7 @@
             }
         ],
         "x": 190,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "9af836940ce14314"
@@ -686,7 +691,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 910,
-        "y": 320,
+        "y": 340,
         "wires": [
             []
         ]
@@ -704,7 +709,7 @@
         "startOffset": 0,
         "endOffset": 0,
         "x": 680,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "bb41070571278ba8"
@@ -759,7 +764,7 @@
             }
         ],
         "x": 190,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "03cb69799aae3a03"
@@ -791,7 +796,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 910,
-        "y": 420,
+        "y": 440,
         "wires": [
             []
         ]
@@ -834,7 +839,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 460,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "2ad43f34e3c19b40"
@@ -880,7 +885,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 460,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "726a019eaa32bf3b"
@@ -901,7 +906,7 @@
         "startOffset": 0,
         "endOffset": 0,
         "x": 680,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "108cca404ca1a6d0"
@@ -936,7 +941,7 @@
             }
         ],
         "x": 170,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "d3313ebb9c3da19f"
@@ -962,7 +967,7 @@
         "repair": false,
         "outputs": 1,
         "x": 400,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "e60777a3cdbe9384"
@@ -998,7 +1003,7 @@
         "repair": false,
         "outputs": 3,
         "x": 610,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "9fdfa64ab097db2e"
@@ -1034,7 +1039,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 810,
-        "y": 560,
+        "y": 540,
         "wires": [
             []
         ]
@@ -1062,7 +1067,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 800,
-        "y": 680,
+        "y": 660,
         "wires": [
             []
         ]
@@ -1090,7 +1095,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 800,
-        "y": 620,
+        "y": 600,
         "wires": [
             []
         ]
@@ -1122,7 +1127,7 @@
             }
         ],
         "x": 170,
-        "y": 880,
+        "y": 820,
         "wires": [
             [
                 "c7331c10ed2ffa69"
@@ -1134,13 +1139,13 @@
         "type": "switch",
         "z": "049368fbb51358f1",
         "g": "33a3d7d58c0732f0",
-        "name": "Zigbee Switch 2",
+        "name": "Zigbee Switch 3",
         "property": "payload.event.device_id",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "8d3bc203a859697aab9d9dd417877d9b",
+                "v": "68f298870f9e4889b7748650bf689549",
                 "vt": "str"
             }
         ],
@@ -1148,7 +1153,7 @@
         "repair": false,
         "outputs": 1,
         "x": 400,
-        "y": 880,
+        "y": 820,
         "wires": [
             [
                 "c60bfc919dca4c32"
@@ -1184,7 +1189,7 @@
         "repair": false,
         "outputs": 3,
         "x": 610,
-        "y": 880,
+        "y": 820,
         "wires": [
             [
                 "0624c96a9b65ee5b"
@@ -1220,7 +1225,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 810,
-        "y": 820,
+        "y": 760,
         "wires": [
             []
         ]
@@ -1248,7 +1253,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 800,
-        "y": 940,
+        "y": 880,
         "wires": [
             []
         ]
@@ -1276,7 +1281,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 800,
-        "y": 880,
+        "y": 820,
         "wires": [
             []
         ]
@@ -1384,12 +1389,9 @@
             }
         ],
         "x": 190,
-        "y": 1120,
+        "y": 1000,
         "wires": [
-            [
-                "6ea673fd2ce4f2d7",
-                "f34e17e75dea0eb5"
-            ],
+            [],
             []
         ]
     },
@@ -1440,11 +1442,9 @@
             }
         ],
         "x": 190,
-        "y": 1200,
+        "y": 1080,
         "wires": [
-            [
-                "0f053bb4721de393"
-            ],
+            [],
             []
         ]
     },
@@ -1485,8 +1485,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 480,
-        "y": 1100,
+        "x": 640,
+        "y": 980,
         "wires": [
             [
                 "40b14878bcf79959"
@@ -1531,8 +1531,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 480,
-        "y": 1160,
+        "x": 640,
+        "y": 1040,
         "wires": [
             [
                 "e2f3d157c43a4a07"
@@ -1562,8 +1562,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 810,
-        "y": 1160,
+        "x": 970,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -1590,8 +1590,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 810,
-        "y": 1100,
+        "x": 970,
+        "y": 980,
         "wires": [
             []
         ]
@@ -1618,9 +1618,51 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 790,
-        "y": 1220,
+        "x": 990,
+        "y": 1100,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb9b6a4b7aaed1f2",
+        "type": "time-range-switch",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "Night",
+        "lat": "53.71986",
+        "lon": "-2.6411",
+        "startTime": " 01:00",
+        "endTime": "07:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 410,
+        "y": 980,
+        "wires": [
+            [
+                "f34e17e75dea0eb5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c15133313ffdba4d",
+        "type": "time-range-switch",
+        "z": "049368fbb51358f1",
+        "g": "5a2baa393ed09463",
+        "name": "Night",
+        "lat": "53.71986",
+        "lon": "-2.6411",
+        "startTime": " 01:00",
+        "endTime": "07:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 410,
+        "y": 1100,
+        "wires": [
+            [
+                "0f053bb4721de393"
+            ],
             []
         ]
     },
@@ -2843,7 +2885,7 @@
         "type": "server-state-changed",
         "z": "3a4a4140ad6645a3",
         "g": "79c1e7847be95095",
-        "name": "Target Energy Night Price is On",
+        "name": "Target Energy Night Price On",
         "server": "1dd16987.0978c6",
         "version": 5,
         "outputs": 2,
@@ -2884,7 +2926,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 210,
+        "x": 200,
         "y": 80,
         "wires": [
             [
@@ -2915,8 +2957,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 490,
-        "y": 100,
+        "x": 890,
+        "y": 200,
         "wires": [
             []
         ]
@@ -2926,7 +2968,7 @@
         "type": "server-state-changed",
         "z": "3a4a4140ad6645a3",
         "g": "79c1e7847be95095",
-        "name": "Target Energy Night Price is Off",
+        "name": "Target Energy Night Price Off",
         "server": "1dd16987.0978c6",
         "version": 5,
         "outputs": 2,
@@ -2967,8 +3009,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 210,
-        "y": 200,
+        "x": 200,
+        "y": 260,
         "wires": [
             [
                 "99e5715f0c78d45b"
@@ -2998,8 +3040,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 490,
-        "y": 220,
+        "x": 910,
+        "y": 380,
         "wires": [
             []
         ]
@@ -3009,7 +3051,7 @@
         "type": "server-state-changed",
         "z": "3a4a4140ad6645a3",
         "g": "79c1e7847be95095",
-        "name": "Target Energy Day Price is On",
+        "name": "Target Energy Day Price On",
         "server": "1dd16987.0978c6",
         "version": 5,
         "outputs": 2,
@@ -3064,7 +3106,7 @@
         "type": "server-state-changed",
         "z": "3a4a4140ad6645a3",
         "g": "79c1e7847be95095",
-        "name": "Target Energy Day Price is Off",
+        "name": "Target Energy Day Price Off",
         "server": "1dd16987.0978c6",
         "version": 5,
         "outputs": 2,
@@ -3106,11 +3148,164 @@
             }
         ],
         "x": 200,
-        "y": 260,
+        "y": 320,
         "wires": [
             [
                 "99e5715f0c78d45b"
             ],
+            []
+        ]
+    },
+    {
+        "id": "e4af50efbb5e8497",
+        "type": "api-current-state",
+        "z": "3a4a4140ad6645a3",
+        "d": true,
+        "g": "79c1e7847be95095",
+        "name": "Charger Override is Off",
+        "server": "1dd16987.0978c6",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.charger_override",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 430,
+        "y": 380,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "744cebedb261bd98",
+        "type": "server-state-changed",
+        "z": "3a4a4140ad6645a3",
+        "d": true,
+        "g": "79c1e7847be95095",
+        "name": "Charger Override On",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.charger_override",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b55638be391227ff",
+        "type": "server-state-changed",
+        "z": "3a4a4140ad6645a3",
+        "d": true,
+        "g": "79c1e7847be95095",
+        "name": "Charger Override Off",
+        "server": "1dd16987.0978c6",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.charger_override",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [],
             []
         ]
     },
