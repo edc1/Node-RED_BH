@@ -11,7 +11,7 @@
         "id": "6379f67f0d1d27f4",
         "type": "tab",
         "label": "Christmas Lights",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -280,12 +280,14 @@
             "892bd3539daab1a5",
             "372a410ad19d586b",
             "f670457e61eb5cf4",
-            "147fced577b9b1d3"
+            "147fced577b9b1d3",
+            "cb6787ce61dc29bd",
+            "4ac65ba5dca88470"
         ],
         "x": 54,
         "y": 399,
-        "w": 1112,
-        "h": 142
+        "w": 1152,
+        "h": 182
     },
     {
         "id": "5a2baa393ed09463",
@@ -2588,7 +2590,7 @@
         "y": 460,
         "wires": [
             [
-                "892bd3539daab1a5"
+                "4ac65ba5dca88470"
             ],
             []
         ]
@@ -2645,11 +2647,101 @@
             }
         ],
         "x": 190,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "372a410ad19d586b"
             ],
+            []
+        ]
+    },
+    {
+        "id": "cb6787ce61dc29bd",
+        "type": "server-state-changed",
+        "z": "36707912aa1f457f",
+        "g": "c007e1dde9cb920e",
+        "name": "Target Energy Price is On",
+        "server": "1dd16987.0978c6",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.octopus_energy_target_dryer_night_target"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "372a410ad19d586b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4ac65ba5dca88470",
+        "type": "api-call-service",
+        "z": "36707912aa1f457f",
+        "g": "c007e1dde9cb920e",
+        "name": "Start Dryer Pillow",
+        "server": "1dd16987.0978c6",
+        "version": 7,
+        "debugenabled": true,
+        "action": "home_connect_alt.start_program",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "labelId": [],
+        "data": "{\t    \"device_id\": \"58a6d48ff34d61b91bfe5d84c68e7480\",\t    \"program_key\": \"LaundryCare.Dryer.Program.Pillow\",\t    \"validate\": true\t}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": false,
+        "domain": "home_connect_alt",
+        "service": "start_program",
+        "x": 1090,
+        "y": 520,
+        "wires": [
             []
         ]
     },
@@ -3698,7 +3790,7 @@
         },
         "outputInitially": false,
         "stateType": "str",
-        "ifState": "2.2.43, unavailable",
+        "ifState": "2.2.45, unavailable",
         "ifStateType": "str",
         "ifStateOperator": "does_not_include",
         "outputOnlyOnStateChange": true,
